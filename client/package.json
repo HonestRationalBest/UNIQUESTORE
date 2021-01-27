@@ -34,7 +34,7 @@
       "react-app/jest"
     ]
   },
-  "proxy": "https://6011aa8faa429d95fc188d5b--dreamy-kowalevski-8e4045.netlify.app/",
+  "proxy": "http://localhost:3001/",
   "browserslist": {
     "production": [
       ">0.2%",
