@@ -17,13 +17,13 @@ app.use('/api', require('./routes/collection.routes'))
 const PORT = config.get('port') || 3001
 
 
-// if (process.env.NODE_ENV === 'production') {
-//     app.use("/", express.static(path.loin(__dirname, 'client', 'build')))
+if (process.env.NODE_ENV === 'production') {
+    app.use("/", express.static(path.loin(__dirname, 'client', 'build')))
 
-//     app.get("*", (req, res) => {
-//         res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-//     })
-// }
+    app.get("*", (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
+    })
+}
 
 async function start() {
     try {
