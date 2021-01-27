@@ -1,0 +1,79 @@
+.wrapper{
+    background: #1C1C1C;
+    color: white;
+}
+
+@font-face{
+    font-family: RobotoMedium;
+    src: url(../fonts/Roboto-Medium.ttf);
+}
+
+@font-face{
+    font-family: ManropeRegular;
+    src: url(../fonts/Manrope-Regular.ttf);
+} 
+
+.wrapper a{
+    color: white;
+    text-decoration: none;
+}
+
+.container{
+    width: 1200px;
+    margin: 0px auto;
+}
+
+.logo{
+    font-family: RobotoMedium;
+    font-size: 26px;
+}
+
+.navigation_wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 0px;
+}
+
+.navigation{
+    display: flex;
+    align-items: center;
+}
+
+.navigation ul{
+    display: flex;
+    list-style: none;
+}
+
+.navigation li:first-child{
+    margin-right: 20px;
+}
+
+
+.search{
+    position: relative;
+    margin-left: 100px;
+}
+
+.search input{
+    width: 230px;
+    padding: 6px 0px 6px 30px;
+    font-size: 16px;
+    font-family: ManropeRegular;
+    background: white;
+    border-radius: 40px;
+    border: none;
+
+}
+
+.search img{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.search_logo_wrapper{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}

@@ -1,0 +1,239 @@
+@font-face{
+    font-family: ManropeRegular;
+    src: url(../fonts/Manrope-Regular.ttf);
+  }  
+
+.wrapper{
+    background: #F6F6F6;
+}
+
+.navigation_wrapper{
+    background: #E7E7E7;
+    margin: 0px;
+}
+
+.container{
+    width: 1200px;
+    margin: 0px auto;
+}
+
+.nav ul{
+    display: flex;
+    list-style: none;
+    padding: 12px 0px 6px 0px;
+    margin: 0px;
+}
+
+.nav li:first-child{
+    margin-right: 50px;
+}
+
+.nav a{
+    color: black;
+    text-decoration: none;
+}
+
+.profile{
+    width: 680px;
+    height: 500px;
+    background: #FFFFFF;
+    margin-top: 50px;
+    display: flex;
+}
+
+.content_wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 90px;
+}
+
+.dark{
+    margin-top: 425px;
+}
+
+.dark1{
+    display: flex;
+    justify-content: right;
+}
+
+.dark1 img{
+    margin-top: 160px;
+    margin-bottom: 180px;
+    display: block;
+}
+
+.avatar{
+    margin: 50px 0px 0px 50px;
+    position: relative;
+}
+
+.avatar input{
+    display: none;
+}
+
+.ava{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.avatar_label{
+    cursor: pointer;
+    position: absolute;
+    left: 112px;
+    top: 114px
+}
+
+.user_data{
+    margin: 50px 0px 0px 50px;
+}
+
+.user_data p{
+    font-size: 26px;
+    color: black;
+    margin-top: 0px;
+}
+
+.fields_wrapper p{
+    font-size: 16px;
+    margin: 0px;
+    color: black;
+}
+
+.fields_wrapper hr{
+    width: 350px;
+    background: #E7E7E7;
+    border: none;
+    height: 1px;
+    margin-bottom: 25px;
+}
+
+.edit{
+    width: 350px;
+    display: flex;
+    justify-content: flex-end;
+    text-decoration: none;
+    font-family: ManropeRegular;
+    font-size: 16px;
+    margin-bottom: 200px;
+}
+
+.edit button{
+    margin-top: 25px;
+    width: 160px;
+    background: #FF8B29;
+    border-radius: 40px;
+    border: none;
+    padding: 15px 0px;
+    color: white;
+    font-family: ManropeRegular;
+    cursor: pointer;
+}
+
+.deleteAcc{
+    padding-top: 313px;
+
+}
+
+.deleteAcc a{
+    text-decoration: none;
+    color: #ED5757;
+}
+
+.button_wrapper{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 50px;
+}
+
+.button_wrapper button{
+    width: 160px;
+    padding: 12px 0px;
+    border-radius: 40px;
+    font-size: 16px;
+    font-family: ManropeRegular;
+    margin-bottom: 200px;
+    cursor: pointer;
+}
+
+.cancel{
+    border: 1px solid black;
+    background: none;
+}
+
+.save{
+    background: #15E189;
+    color: white;
+    border: none;
+    margin-left: 30px;
+}
+
+.contant p{
+    width: 907px;
+    font-size: 106px;
+    color: #E7E7E7;
+    line-height: 1;
+    margin: 120px 0px 0px 0px;
+}
+
+.contant a{
+    text-decoration: none;
+    width: 200px;
+    display: block;
+}
+
+.contant button{
+    width: 200px;
+    background: #FF8B29;
+    padding: 20px 0px;
+    font-family: ManropeRegular;
+    font-size: 16px;
+    margin-top: 40px;
+    border-radius: 40px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: block;
+}
+
+.contant img{
+    margin: 25px 0px 200px 0px;
+}
+
+.contant_img{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.collections button{
+    width: 40px;
+    border-radius: 50%;
+    background: #FF8B29;
+    color: white;
+    border: none;
+    padding: 8px 0px;
+    font-size: 20px;
+}
+
+.collections{
+
+}
+
+.plus_button_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 50px;
+}
+
+.plus_button_wrapper p{
+    margin-left: 10px;
+}
+
+.collections_wrapper{
+    display: flex;
+    justify-content: space-between;
+    width: 1200px;
+    flex-wrap: wrap;
+}

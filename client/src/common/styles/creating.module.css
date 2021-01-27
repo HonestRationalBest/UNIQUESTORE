@@ -1,0 +1,124 @@
+.wrapper{
+    position: relative;
+}
+
+.blur_background{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 1014px;
+    display: block;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.window{
+    width: 900px;
+    margin: 120px auto 0px auto;
+    position: absolute;
+    top: 0; left: 0;  right: 0;
+    background: white;
+}
+
+.window p{
+    text-align: center;
+    font-size: 26px;
+    margin: 50px 0px;
+}
+
+.window input{
+    width: 420px;
+    background: none;
+    border: none;
+    border-bottom: 1px solid #767676;
+    padding: 0px 0px 8px 0px;
+    display: block;
+    color: #767676;
+    margin: 0px auto;
+}
+
+.drag_drop_field{
+    width: 600px;
+    height: 256px;
+    margin: 25px auto 0px auto;
+    border: 3px dashed #767676;
+    border-radius: 20px;
+    display: block;
+}
+
+.drag_drop_field img{
+    margin: 80px auto 30px auto;
+    display: block;
+}
+
+.drag_drop_field p{
+    font-size: 16px;
+    color: #767676;
+    margin: 0px;
+}
+
+
+.button_wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    height: 57px;
+}
+
+.button_wrapper button{
+    width: 200px;
+    padding: 18px 0px;
+    margin: 42px 10px 50px 10px;
+    border-radius: 40px;
+    font-size: 16px;
+}
+
+.cancel_button{
+    background: none;
+    border: 1px solid black;
+    color: black;
+}
+
+.create_button{
+    background: #FF8B29;
+    color: white;
+    border: none;
+}
+
+.window_error{
+    margin: 5px 0px !important;
+    font-size: 12px !important;
+    color: red;
+}
+
+.window_error.left{
+    width: 420px;
+    display: block;
+    margin: 5px auto 10px auto !important;
+    text-align: left;
+}
+
+.uploaded_files p{
+    font-size: 16px;
+    margin: 25px 0px 0px 0px;
+}
+
+.uploaded_file_wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.uploaded_file_wrapper p{
+    font-size: 12px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
+
+.uploaded_file{
+    width: 30px;
+    height: 36px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
