@@ -16,7 +16,7 @@ app.use('/api', require('./routes/collection.routes'))
 app.use('/api', require('./routes/delete_account.routes'))
 
 const PORT =
-    //  config.get('port') || 
+    config.get('port') ||
     3001
 
 
