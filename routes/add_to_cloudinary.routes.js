@@ -95,7 +95,6 @@ router.post("/add_avatar_to_cloudinary",
             const uploadResponse = await cloudinary.uploader.upload(img, {
                 upload_preset: 'dev_setups',
             });
-            console.log(uploadResponse);
             res.json({ msg: 'Successfully adding!' });
 
             User.updateOne({ _id: id }, { img: uploadResponse.url }, async (err, users) => {

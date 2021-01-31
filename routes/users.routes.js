@@ -9,7 +9,6 @@ router.get("/users", async (req, res) => {
 
     const length = req.params.length
 
-    console.log(length)
 
     User.find({}, '_id name img hasCollections', async (err, users) => {
         if (err) return console.log(err);

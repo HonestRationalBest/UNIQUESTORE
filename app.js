@@ -15,7 +15,9 @@ app.use('/api', require('./routes/add_to_cloudinary.routes'))
 app.use('/api', require('./routes/collection.routes'))
 app.use('/api', require('./routes/delete_account.routes'))
 
-const PORT = config.get('port') || 3001
+const PORT =
+    //  config.get('port') || 
+    3001
 
 
 if (process.env.NODE_ENV == 'production') {
