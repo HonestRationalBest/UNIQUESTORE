@@ -53,12 +53,12 @@ const LogIn = () => {
             <div className={style.container}>
                 <div className={style.form}>
                     <p className={style.title}>To continue, log in</p>
-                    <div className={style.social_networks}>
+                    {/* <div className={style.social_networks}>
                         <ul>
                             <li><img src={facebook} alt="facebook" /></li>
                             <li><img src={linkedin} alt="linkedin" /></li>
                         </ul>
-                    </div>
+                    </div> */}
                     <div className={style.margin_input_wrapper}>
                         <input
                             placeholder="E-mail"
