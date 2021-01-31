@@ -15,9 +15,9 @@ app.use('/api', require('./routes/add_to_cloudinary.routes'))
 app.use('/api', require('./routes/collection.routes'))
 app.use('/api', require('./routes/delete_account.routes'))
 
-const PORT =
-    config.get('port') ||
-    3001
+// const PORT =
+//     config.get('port') ||
+//     3001
 
 
 if (process.env.NODE_ENV == 'production') {
@@ -28,6 +28,8 @@ if (process.env.NODE_ENV == 'production') {
     });
 }
 
+
+
 async function start() {
     try {
         await mongoose.connect(config.get('mongoUri'), {
@@ -36,7 +38,11 @@ async function start() {
             useFindAndModify: false,
             useCreateIndex: true
         })
-        app.listen(PORT, () => console.log(`App has been started on port ${PORT}`))
+        var server = app.listen(process.env.PORT || 3001, function () {
+            var port = server.address().port;
+            console.log("Express is working on port " + port);
+        });
+        // app.listen(PORT, () => console.log(`App has been started on port ${PORT}`))
     } catch (e) {
         console.log('Server Error', e.message);
     }
