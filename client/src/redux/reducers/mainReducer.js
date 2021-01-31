@@ -6,8 +6,9 @@ let initialState = {
     },
     isLoaded: false,
     collections: [],
-    usersId: []
-
+    usersId: [],
+    MyItems: [],
+    UsersCollections: []
 };
 
 const mainReducer = (state = initialState, action) => {
@@ -36,6 +37,16 @@ const mainReducer = (state = initialState, action) => {
             return {
                 ...state,
                 usersId: action.usersId
+            }
+        case "SET_MY_ITEMS":
+            return {
+                ...state,
+                MyItems: action.items
+            }
+        case "SET_USERS_COLLECTIONS":
+            return {
+                ...state,
+                UsersCollections: action.items
             }
         default:
             return state

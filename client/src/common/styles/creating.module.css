@@ -1,3 +1,4 @@
+
 .wrapper{
     position: relative;
 }
@@ -18,6 +19,7 @@
     position: absolute;
     top: 0; left: 0;  right: 0;
     background: white;
+
 }
 
 .window p{
@@ -34,7 +36,7 @@
     padding: 0px 0px 8px 0px;
     display: block;
     color: #767676;
-    margin: 0px auto;
+    margin: 15px auto 0px auto;
 }
 
 .drag_drop_field{
@@ -121,4 +123,12 @@
     height: 36px;
     border: 1px solid black;
     border-radius: 5px;
+}
+
+.background_for_alerts{
+    background: black;
+    opacity: 70%;
+    position: absolute;
+    width: 100%;
+    min-height: 1000px;
 }

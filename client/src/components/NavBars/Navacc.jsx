@@ -6,6 +6,12 @@ import search from "../../common/img/search.svg"
 import style from '../../common/styles/reg_style.module.css';
 
 const NavAcc = () => {
+
+    const exit = () => {
+        localStorage.removeItem('userData')
+        window.location.reload()
+    }
+
     return (
         <div className={style.wrapper}>
             <div className={style.container}>
@@ -23,6 +29,7 @@ const NavAcc = () => {
                             <li>Ru</li>
                             <li>En</li>
                         </ul>
+                        <p onClick={exit}>Exit</p>
                     </nav>
                 </div>
             </div>

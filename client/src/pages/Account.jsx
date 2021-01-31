@@ -15,7 +15,7 @@ import ava from "../common/img/ava.svg"
 import style from "../common/styles/account.module.css";
 import { setAvatar } from "../redux/actions/setAvatar";
 
-const Account = ({ userId }) => {
+const Account = ({ userId, token }) => {
 
     const [error, setError] = useState("")
     const [profileImg, setProfileImg] = useState(ava)
@@ -29,7 +29,12 @@ const Account = ({ userId }) => {
         })
     }, [])
 
-
+    const handlerDelete = () => {
+        request(`/api/delete_acc/${userId}`, 'DELETE',).then((res) => {
+            dispatch(setMyData(res))
+            window.location.reload()
+        })
+    }
 
     const imageHandler = (e) => {
         e.preventDefault()
@@ -90,7 +95,7 @@ const Account = ({ userId }) => {
                             <div className={style.fields_wrapper}>
                                 <p>{myData.email}</p>
                             </div>
-                            <div className={style.deleteAcc}><Link to="/" >Delete account</Link></div>
+                            <div className={style.deleteAcc}><Link to="/" onClick={handlerDelete}>Delete account</Link></div>
                         </div>
                     </div>
                     <img src={dark} alt="dark" className={style.dark} />

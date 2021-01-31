@@ -20,7 +20,6 @@ const MyCollections = ({ userId }) => {
     const collections = useSelector(state => state.mainPage.collections)
     useEffect(() => {
         request(`/api/my_collections/${userId}`, 'GET',).then((res) => {
-            console.log(res)
             dispatch(setMyCollections(res))
         })
     }, [])

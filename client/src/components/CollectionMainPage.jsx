@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 import style from "../common/styles/common_el.module.css";
@@ -14,7 +14,7 @@ const CollectionMainPage = ({ colName, colDate, img, id }) => {
                         <div className={style.flex_wrapper}>
                             <p>{colName}</p>
                         </div>
-                        <p className={style.date}>{colDate}</p>
+                        <p className={style.date}>{colDate.slice(0, 10)}</p>
                     </div>
                 </div>
             </Link>

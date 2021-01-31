@@ -1,15 +1,17 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import { useHttp } from "../hooks/http.hook";
 import { useDispatch, useSelector } from 'react-redux'
 
 import Footer from "../components/Footer";
 import NavAcc from "../components/NavBars/Navacc";
-import UsersCollecions from "../components/UsersCollections";
 
 import dark from "../common/img/dark.svg"
 
 import style from '../common/styles/main.module.css';
 import { setData } from "../redux/actions/setData";
+
+
+const UsersCollecions = React.lazy(() => import('../components/UsersCollections'));
 
 const LoggedHome = () => {
 
@@ -23,7 +25,7 @@ const LoggedHome = () => {
     const [length, setLength] = useState(2)
 
     useEffect(() => {
-        request('/api/users', 'GET').then((res) => {
+        request(`/api/users`, 'GET').then((res) => {
             for (let i = 0; i < res.length; i++) {
                 data.push(res[i])
             }
@@ -46,12 +48,6 @@ const LoggedHome = () => {
         setLength(length + 2)
     }
 
-    console.log(usersData)
-
-    const allCollections = usersData.map((user, index) => {
-        return (<UsersCollecions key={index} img={user.img} name={user.name} id={user._id} />)
-    }
-    );
 
     return (
         <div className={style.wrapper}>
@@ -94,7 +90,19 @@ const LoggedHome = () => {
                 <div className={style.container}>
                     <p className={style.collection_title}>Collections</p>
                 </div>
-                {allCollections}
+                {usersData.map((user, index) => {
+                    if (user.hasCollections === true) {
+                        return (
+                            <Suspense fallback={<div>
+                                Загрузка...
+                        </div>}>
+                                <UsersCollecions key={user._id} img={user.img} name={user.name} id={user._id} />
+                            </Suspense>
+                        )
+                    }
+
+                }
+                )}
                 <p className={style.show} onClick={uploadingData}>Show more</p>
             </div>
             <Footer />

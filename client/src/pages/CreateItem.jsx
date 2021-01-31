@@ -2,24 +2,25 @@ import React, { useState } from "react";
 import { useHttp } from "../hooks/http.hook";
 import { useHistory, Link } from "react-router-dom";
 
-import MyCollections from "./MyCollections";
-
 import drag_and_drop from "../common/img/drag_and_drop.png"
 
 import style from "../common/styles/creating.module.css";
+import MyItems from "./MyItems";
 
-const CreateCollection = ({ userId }) => {
+const CreateItem = () => {
 
     const { request } = useHttp()
-    const history = useHistory();
+    const history = useHistory()
+    const collectionId = history.location.pathname.slice(13, 37)
 
     const [drag, setDrag] = useState(false)
     const [error, setError] = useState("")
     const [fileName, setfileName] = useState(false)
-    const [selectedFile, setSelectedFile] = useState();
+    const [selectedFile, setSelectedFile] = useState()
 
-    const [collectionName, setCollectionName] = useState();
+    const [itemName, setItemName] = useState()
     const [nameError, setNameError] = useState()
+    const [tegs, setTegs] = useState()
 
 
     const dragStartHandler = (e) => {
@@ -73,18 +74,20 @@ const CreateCollection = ({ userId }) => {
 
     const uploadImage = async (base64EncodedImage) => {
         try {
-            updateUserStatusCollection(userId)
-            let date = new Date()
-            await request('api/add_collection_to_cloudinary', 'POST',
-                { img: base64EncodedImage, id: userId, name: collectionName, date: date },
+            await request('/api/add_item_to_cloudinary', 'POST',
+                {
+                    img: base64EncodedImage,
+                    id: collectionId,
+                    name: itemName, tegs
+                },
             ).then((res) => {
+                console.log(res)
                 if (res.msg === "Successfully adding!") {
-                    history.push("/my_collections")
+                    console.log("Попал")
+                    history.push(`/my_items/${collectionId}`)
                 }
                 if (res.errors[0].msg === "Name is required!") {
                     setNameError("Name is required")
-                } else {
-                    setNameError("")
                 }
             })
         } catch (err) {
@@ -92,22 +95,17 @@ const CreateCollection = ({ userId }) => {
         }
     }
 
-    const updateUserStatusCollection = (userId) => {
-        request(`/api/has_collection/${userId}`, 'PUT')
-    }
-
-
-
     return (
         <div className={style.wrapper}>
             <div className={style.blur_background}>
-                <MyCollections />
+                <MyItems />
             </div>
             <div className={style.background_for_alerts}></div>
             <div className={style.window}>
-                <p>New collection</p>
-                <input placeholder="The name of the new colleciton" onChange={(e) => setCollectionName(e.target.value)} />
+                <p>New item</p>
+                <input placeholder="The name of the new item" onChange={(e) => setItemName(e.target.value)} />
                 {nameError ? <p className={`${style.window_error} ${style.left}`}>{nameError}</p> : <></>}
+                <input placeholder="Tegs" onChange={(e) => setTegs(e.target.value)} />
                 {drag ?
                     <div className={style.drag_drop_field}
                         onDragStart={(e) => dragStartHandler(e)}
@@ -141,7 +139,7 @@ const CreateCollection = ({ userId }) => {
                     <></>
                 }
                 <div className={style.button_wrapper}>
-                    <Link to="/my_collections"><button className={style.cancel_button}>Cancel</button></Link>
+                    <Link to={`/my_items/${collectionId}`}><button className={style.cancel_button}>Cancel</button></Link>
                     <button className={style.create_button} onClick={(e) => handleSubmitFile(e)}>Create</button>
                 </div>
             </div>
@@ -149,4 +147,4 @@ const CreateCollection = ({ userId }) => {
     )
 }
 
-export default CreateCollection;
+export default CreateItem;

@@ -13,6 +13,7 @@ app.use('/api/auth', require('./routes/auth.routes'))
 app.use('/api', require('./routes/users.routes'))
 app.use('/api', require('./routes/add_to_cloudinary.routes'))
 app.use('/api', require('./routes/collection.routes'))
+app.use('/api', require('./routes/delete_account.routes'))
 
 const PORT = config.get('port') || 3001
 

@@ -51,8 +51,16 @@
 
 .item_img{
     position: relative;
+    /* width: 500px;
+    height: 400px;
+    object-fit: cover; */
+
+}
+
+.item_img img{
     width: 500px;
     height: 400px;
+    object-fit: cover;
 }
 
 .text_wrapper{
@@ -97,14 +105,14 @@
 
 .likes_wrapper{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     width: 107px;
 
 }
 
 .likes_wrapper p{
-    margin: 0px;
+    margin-left: 15px;
 }
 
 .tegs p{

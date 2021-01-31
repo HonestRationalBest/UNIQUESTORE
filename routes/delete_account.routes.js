@@ -1,27 +1,22 @@
 const { Router } = require('express');
 const Collections = require('../models/Collections');
+const User = require('../models/User');
 const router = Router()
 
 
-router.get("/collecion/:collectionId", async (req, res) => {
+router.delete("/delete_acc/:id", async (req, res) => {
 
-    const id = req.params.collectionId
-    Collections.find(
+    const id = req.params.id
+    Collections.deleteMany(
         {
-            _id: id
+            ownerId: id
         },
         async (err, myData) => {
             if (err) return console.log(err);
             return res.send(myData)
         }
     )
-});
-
-
-router.delete("/delete_collection/:id", async (req, res) => {
-
-    const id = req.params.id
-    Collections.deleteOne(
+    User.deleteOne(
         {
             _id: id
         },

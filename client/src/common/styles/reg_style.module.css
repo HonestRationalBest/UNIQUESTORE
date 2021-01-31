@@ -40,6 +40,11 @@
     align-items: center;
 }
 
+.navigation p{
+    margin-left: 20px;
+    cursor: pointer;
+}
+
 .navigation ul{
     display: flex;
     list-style: none;

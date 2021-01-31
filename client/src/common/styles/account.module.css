@@ -5,6 +5,7 @@
 
 .wrapper{
     background: #F6F6F6;
+    z-index: 0;
 }
 
 .navigation_wrapper{
@@ -177,6 +178,10 @@
     margin: 120px 0px 0px 0px;
 }
 
+.contant_havent_items{
+    width: 980px !important; 
+}
+
 .contant a{
     text-decoration: none;
     width: 200px;
@@ -227,8 +232,43 @@
     margin-top: 50px;
 }
 
+.plus_button_wrapper_item{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 50px;
+    position: relative;
+}
+.add_item_text{
+    width: 130px;
+}
+
+.plus_button_wrapper_item button{
+    background: #A8A0FF;
+    margin: 0px 10px 0px 50px;
+}
+
+.collection_name{
+    margin-left: 300px;
+    width: 300px;
+}
+
 .plus_button_wrapper p{
     margin-left: 10px;
+}
+
+.sorting_text{
+    margin-left: 448px;
+    cursor: pointer;
+}
+.sorting_image{
+    margin-left: 10px;
+    cursor: pointer;
+}
+.rotate_sorting_image{
+    margin-left: 10px;
+    cursor: pointer;
+    rotate: 180deg;
 }
 
 .collections_wrapper{
@@ -236,4 +276,34 @@
     justify-content: space-between;
     width: 1200px;
     flex-wrap: wrap;
+}
+
+.sort_wrapper{
+    width: 144px;
+    border-radius: 10px;
+    background: #E7E7E7;
+    position: absolute;
+    right: 0px;
+    top: 43px;
+    z-index: 2;
+}
+
+.sort_wrapper ul{
+    list-style: none;    
+    padding-left: 20px;
+
+}
+
+.sort_wrapper li{
+    width: 110px;
+    cursor: pointer;
+    padding-bottom: 8px;
+}
+
+.sort_wrapper li:last-child{
+    padding-bottom: 0px;
+}
+
+.back_to_collections_img{
+    margin-top: 5px;
 }
